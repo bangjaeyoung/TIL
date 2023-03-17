@@ -1,4 +1,5 @@
 # IoC(Inversion of Control), DI(Dependency Injection)
+> *Ref - https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans*
 
 ## 스프링에서의 Bean
 - 스프링 IoC 컨테이너에 의해 생성되고 관리되는 객체

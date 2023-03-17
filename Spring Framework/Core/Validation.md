@@ -1,5 +1,5 @@
 # 스프링에서의 Validation
-> 유효성 검증, http request에서 잘못된 부분을 체크
+> 유효성 검증, http request에서 잘못된 부분을 체크 - [Reference](https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#validation)
 
 ## 데이터에서의 Validation
 - 필수 데이터가 존재하는지

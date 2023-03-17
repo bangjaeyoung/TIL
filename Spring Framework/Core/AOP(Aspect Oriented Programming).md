@@ -1,6 +1,6 @@
 # AOP(Aspect Oriented Programming) - 관점 지향 프로그래밍
 > 공통적인 처리가 필요할 때 필요한 것이 바로 AOP
-> interceptor나 filter보다 조금 더 똑똑한 방법
+> interceptor나 filter보다 조금 더 똑똑한 방법 - [Reference](https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#aop)
 - 로깅(Logging)
 - 트랜잭선(Transaction)
 - 인증(Authentication)
