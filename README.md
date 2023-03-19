@@ -5,6 +5,7 @@
 ### Data Structure
 - [리스트(List)](https://github.com/bangjaeyoung/TIL/blob/main/Data%20Structure/%EB%A6%AC%EC%8A%A4%ED%8A%B8(List).md)
 - [배열(Array)](https://github.com/bangjaeyoung/TIL/blob/main/Data%20Structure/%EB%B0%B0%EC%97%B4(Array).md)
+- [스택, 큐(Stack, Queue)](https://github.com/bangjaeyoung/TIL/blob/main/Data%20Structure/%EC%8A%A4%ED%83%9D,%20%ED%81%90(Stack,%20Queue).md)
 
 ### Algorithm
 - [최소 신장 트리(Minimum Spanning Tree)](https://github.com/bangjaeyoung/TIL/blob/main/Algorithm/%EC%B5%9C%EC%86%8C%20%EC%8B%A0%EC%9E%A5%20%ED%8A%B8%EB%A6%AC(Minimum%20Spanning%20Tree).md)
