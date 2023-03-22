@@ -10,6 +10,7 @@
 ### Algorithm
 - [그리디(Greedy) 알고리즘](https://github.com/bangjaeyoung/TIL/blob/main/Algorithm/%EA%B7%B8%EB%A6%AC%EB%94%94(Greedy).md)
 - [깊이 우선 탐색(DFS)](https://github.com/bangjaeyoung/TIL/blob/main/Algorithm/%EA%B9%8A%EC%9D%B4%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89(DFS).md)
+- [너비 우선 탐색(BFS)](https://github.com/bangjaeyoung/TIL/blob/main/Algorithm/%EB%84%88%EB%B9%84%20%EC%9A%B0%EC%84%A0%20%ED%83%90%EC%83%89(BFS).md)
 - [최소 신장 트리(Minimum Spanning Tree)](https://github.com/bangjaeyoung/TIL/blob/main/Algorithm/%EC%B5%9C%EC%86%8C%20%EC%8B%A0%EC%9E%A5%20%ED%8A%B8%EB%A6%AC(Minimum%20Spanning%20Tree).md)
   - [Kruskal Algorithm](https://github.com/bangjaeyoung/TIL/blob/main/Algorithm/Kruskal%20Algorithm.md)
   - [Prim Algorithm](https://github.com/bangjaeyoung/TIL/blob/main/Algorithm/Prim%20Algorithm.md)
