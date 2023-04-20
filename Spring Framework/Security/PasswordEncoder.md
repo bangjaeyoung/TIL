@@ -47,3 +47,58 @@ password를 관리할 때는 다음 2가지를 만족해야 함
 > 그런 구현체들이 그럼에도 deprecated되지 않은 이유는 기존 레거시 시스템을 마이그레이션하기 어렵기 때문이라고 함
 
 <br>
+
+## DelegatingPasswordEncoder
+> [Reference](https://docs.spring.io/spring-security/site/docs/current/api/org/springframework/security/crypto/password/DelegatingPasswordEncoder.html)
+
+'A password encoder that delegates to another PasswordEncoder based upon a prefixed identifier.'
+
+'접두사가 붙은 식별자를 기반으로 다른 PasswordEncoder에게 위임하는 password encoder'라고 정의하고 있음
+
+<br>
+
+PasswordEncoder Interface를 구현하고 있는 DelegatingPasswordEncoder 클래스는 다음과 같은 필드 변수를 가지고 있음
+``` java
+private static final String PREFIX = "{";
+private static final String SUFFIX = "}";
+```
+> 이 두 필드 변수 {, } 사이에 들어가는 것이 바로 접두사가 붙은 식별자
+
+<br>
+
+### 인스턴스 생성 
+1. PasswordEncoderFactories를 이용하여 인스턴스를 생성하는 방법
+``` java
+PasswordEncoder passwordEncoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
+```
+
+<br>
+
+2. 직접 커스터마이징하여 인스턴스를 생성하는 방법
+``` java
+String idForEncode = "bcrypt";
+Map<String, PasswordEncoder> encoders = new HashMap<>();
+encoders.put(idForEncode, new BCryptPasswordEncoder());
+encoders.put("noop", NoOpPasswordEncoder.getInstance());
+encoders.put("pbkdf2", new Pbkdf2PasswordEncoder());
+
+PasswordEncoder passwordEncoder = new DelegatingPasswordEncoder(idForEncode, encoders);
+```
+
+<br>
+
+### 패스워드 저장 형식
+- 보통 형식은 {id}encodedPassword
+- DelegatingPasswordEncoder(String, Map, String, String)을 통해 커스터마이징 된 식별자를 사용할 수 있음
+- 만약, 식별자를 찾을 수 없다면, 식별자는 null 값을 가짐
+
+<br>
+
+#### "password"라는 문자열의 패스워드를 저장하는 형식 예시
+``` java
+{noop}password
+{bcrypt}$2a$10$dXJ3SW6G7P50lGmMkkmwe.20cQQubK3.HZWzG3YB1tlRy.fqvM/BG
+{pbkdf2}5d923b44a6d129f3ddf3e3c8d29412723dcbde72445e8ef6bf3b508fbf17fa4ed4d6b99ca763d8dc
+{scrypt}$e0801$8bWJaSu2IKSn9Z9kM+TPXfOc/9bdYSrN1oD9qfVThWEwdRTnO7re7Ei+fUZRJ68k9lTyuTeUp4of4g24hHnazw==$OAOec05+bXxvuu/1qZ6NUR+xQYvYv7BeL1QxwRpY5Pc=
+{sha256}97cde38028ad898ebc02e690819fa220e88c62e0699403e94fff291cfffaf8410849f27605abcbc0
+```
