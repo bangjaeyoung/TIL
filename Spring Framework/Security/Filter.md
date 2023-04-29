@@ -32,3 +32,24 @@ Csrf Filter는 자동으로 활성화되어 있는 Filter이지만, 명시적으
 
 이 Filter를 활성화 하려면 **`http.rememberMe();`**
 > 비활성화 하려면 **`http.rememberMe().disable();`**
+
+<br>
+
+# AnonymousAuthenticationFilter
+**인증이 안된 유저가 요청을 하면, Anonymous(익명) 유저를 만들어서 Authentication에 넣어주는 Filter**
+> 인증이 되지 않았을 때, null 값을 넣어주는 게 아닌 기본적인 Authentication을 생성해주는 거라 보면 됨
+
+Anonymous 유저인지 정상적으로 인증된 유저인지는 다른 Filter에서 분기 처리 가능
+
+주로, 회원가입 페이지에는 인증되지 않은 유저도 접근할 수 있기 때문에, Anonymous인 Authentication이 담겨있는 걸 볼 수 있음
+> 회원가입하는 controller단에 `SecurityContext securityContext = SecurityContextHolder.getContext();`를 통해 SecurityContext를 불러오고 디버그 포인트를 찍어 디버깅 모드로 실행해보면 확인 가능
+<img src=https://github.com/bangjaeyoung/TIL/blob/main/img/Spring%20Framework/Security/AnonymousAuthenticationFilter.png>
+
+기본적으로 만들어지는 익명 객체는 다음과 같은 값을 가짐
+- principal : anonymousUser
+- authorities : ROLE_ANONYMOUS
+
+***항상 인증 객체가 있는 것이기 때문에, Role 검사를 통해 익명 객체인지는 확인해야 함***
+
+기본적으로 지원하고, 명시적으로 기재 시에 `http.anonymous();`
+> 커스텀한 principal 지정을 원할 때, `http.anonymous().principal("custom");`
