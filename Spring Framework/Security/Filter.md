@@ -53,3 +53,29 @@ Anonymous 유저인지 정상적으로 인증된 유저인지는 다른 Filter�
 
 기본적으로 지원하고, 명시적으로 기재 시에 `http.anonymous();`
 > 커스텀한 principal 지정을 원할 때, `http.anonymous().principal("custom");`
+
+<br>
+
+# FilterSecurityInterceptor
+> 이름이 Interceptor로 끝나지만, Filter 종류 중 하나
+
+이 Filter에서는 앞서 설명한 Filter(SecurityContextPersistenceFilter, UsernamePasswordAuthenticationFilter, AnonymousAuthenticationFilter)들에서 넘어온 SecurityContext의 authentication 내용을 기반으로 **최종 인가 판단을 내림**
+
+그렇기 때문에, 대부분의 경우 Filter들 중 뒤쪽에 위치함
+
+### 동작 방식
+- Authentication(인증)을 가져옴
+- 인증에 문제가 있는지 판단
+  - 인증에 문제가 있다면, **AuthenticationException** 발생
+  - 인증에 문제가 없다면, 해당 인증으로 인가를 판단
+- 인가 승인 여부 판단
+  - 인가가 거절된다면, **AccessDeniedException** 발생
+  - 인가가 승인된다면, 정상적으로 Filter 종료
+
+### 코드
+1. ``FilterSecurityInterceptor.doFilter()`` ->
+2. ``AbstractSecurityInterceptor.beforeInvocation()`` ->
+3. ``AbstractSecurityInterceptor.authenticateIfRequired()`` ->
+  > 인증에 문제가 발생하면 **AuthenticationException**
+4. ``AbstractSecurityInterceptor.attemptAuthorization()``
+  > 인가에 문제가 발생하면 **AccessDeniedException**
