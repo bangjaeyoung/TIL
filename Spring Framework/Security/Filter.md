@@ -61,6 +61,7 @@ Anonymous 유저인지 정상적으로 인증된 유저인지는 다른 Filter�
 
 이 Filter에서는 앞서 설명한 Filter(SecurityContextPersistenceFilter, UsernamePasswordAuthenticationFilter, AnonymousAuthenticationFilter)들에서 넘어온 SecurityContext의 authentication 내용을 기반으로 **최종 인가 판단을 내림**
 
+
 그렇기 때문에, 대부분의 경우 Filter들 중 뒤쪽에 위치함
 
 ### 동작 방식
@@ -79,3 +80,13 @@ Anonymous 유저인지 정상적으로 인증된 유저인지는 다른 Filter�
   > 인증에 문제가 발생하면 **AuthenticationException**
 4. ``AbstractSecurityInterceptor.attemptAuthorization()``
   > 인가에 문제가 발생하면 **AccessDeniedException**
+
+<br>
+
+# ExceptionTranslationFilter
+앞의 FilterSecurityInterceptor에서 발생할 수 있는 2가지 Exception이 발생했을 때, **어떤 행동을 취해야 하는지 결정해주는 Filter**
+
+
+1. AuthentiationException : 인증에 실패 시, 발생
+2. AccessDeniedException : 인가에 실패 시, 발생
+<img src=https://github.com/bangjaeyoung/TIL/blob/main/img/Spring%20Framework/Security/ExceptionTranslationFilter.png>
