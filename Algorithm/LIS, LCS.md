@@ -51,6 +51,10 @@ public class Main {
 }
 ```
 
+</br>
+
+## LDS는 반대로 순회하면 됨.
+
 <br>
 
 ## LCS
