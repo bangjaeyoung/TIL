@@ -21,6 +21,28 @@
 > Union Find에서 부모를 갱신할 때, 자기 자신의 노드 번호를 부모로 가지는 노드를 찾을 때까지 깊이 탐색을 하게 됨   
 > 모든 과정을 마치면, 최종적으로 문어발 형식의 그래프 집합들이 생겨남
 
+</br>
+
+## Union Find 메서드
+```Java
+    public int find(int v) {
+        if (unf[v] == v)
+            return v;
+        else
+            return unf[v] = find(unf[v]);
+    }
+
+    public void union(int v1, int v2) {
+       int fv1 = find(v1);
+        int fv2 = find(v2);
+
+        if (fv1 != fv2)
+            unf[fv2] = fv1;
+    }
+```
+
+</br>
+
 ## Kruskal Algorithm 구현
 > 알고리즘 문제 - [프로그래머스 Lv.3 섬 연결하기](https://school.programmers.co.kr/learn/courses/30/lessons/42861)   
 > [문제 풀이 코드](https://github.com/bangjaeyoung/codingtest/commit/629bec419eb31ce4dc5db738917b1b8e130fde29)
