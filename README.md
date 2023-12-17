@@ -1,8 +1,3 @@
-# Today I Learned
-> 오늘 배우고 알게된 내용을 기록하는 저장소
-
-<br>
-
 ### 📌 Data Structure
 - [배열(Array)](https://github.com/bangjaeyoung/TIL/blob/main/Data%20Structure/%EB%B0%B0%EC%97%B4(Array).md)
 - [리스트(List)](https://github.com/bangjaeyoung/TIL/blob/main/Data%20Structure/%EB%A6%AC%EC%8A%A4%ED%8A%B8(List).md)
