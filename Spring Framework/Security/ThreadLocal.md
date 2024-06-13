@@ -36,4 +36,4 @@ WebMVC 기반으로 프로젝트를 생성하면, 대부분의 경우에는 요�
 
 ### ThreadLocalSecurityContextHolderStrategy class
 
-<img src = "https://github.com/bangjaeyoung/TIL/blob/main/img/ThreadLocal.png">
+<img src = "https://github.com/bangjaeyoung/TIL/blob/main/img/Spring%20Framework/Security/ThreadLocal.png">
