@@ -59,7 +59,7 @@
 </br>
 
 ### 📌 Database
-- [DB 락](https://github.com/bangjaeyoung/TIL/tree/main/Database)
+- [DB 락](https://github.com/bangjaeyoung/TIL/blob/main/Database/DB%20Lock.md)
 
 </br>
 
