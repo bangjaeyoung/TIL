@@ -31,7 +31,7 @@
 <br>
 
 ### 📌 [Spring Framework](https://github.com/bangjaeyoung/TIL/blob/main/Spring%20Framework/Basic.md)
-- [좋은 객체지향 설계를 위한 5가지 원칙 - SOLID](https://github.com/bangjaeyoung/TIL/blob/main/Spring%20Framework/SOLID.md)
+- [좋은 객체지향 설계를 위한 5가지 원칙 - SOLID](https://github.com/bangjaeyoung/note/blob/main/OOP/SOLID.md)
 - Spring Framework 핵심 기술
   - [IoC, DI](https://github.com/bangjaeyoung/TIL/blob/main/Spring%20Framework/Core/IoC%20Container%2C%20DI.md)
   - [Spring Resources](https://github.com/bangjaeyoung/TIL/blob/main/Spring%20Framework/Core/Spring%20Resource.md)
